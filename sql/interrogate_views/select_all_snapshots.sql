@@ -1,0 +1,10 @@
+use [awr_test]
+
+SELECT [spapshot_interval_start]
+      ,[snapshot_interval_end]
+      ,[first_snapshot_time]
+      ,[last_snapshot_time]
+      ,[snapshot_age_hours]
+      ,[report_time_interval_minutes]
+FROM [awr_test].[dbo].[vw_sql_perf_mon_time_intervals]
+ORDER BY [spapshot_interval_start]
