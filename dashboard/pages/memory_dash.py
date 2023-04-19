@@ -32,6 +32,9 @@ layout = html.Div(children=[
                      style={'width': "90%"},
                      persistence='string',
                      persistence_type='memory'),
+        html.Br(),
+        html.Br(),
+        html.Br()
     ], className='three columns'),
 ])
 
@@ -41,7 +44,7 @@ layout = html.Div(children=[
     Input('metric', 'value'),
 )
 def build_graph(metric):
-    fig = px.line(df, x="report_time", y=metric, height=600)
+    fig = px.line(df, x="report_time", y=metric, height=600, labels=[metrics])
 
     fig.update_layout(yaxis={'title': 'cntr_value'},
                       title={'text': 'SQL Server performance dashboard',

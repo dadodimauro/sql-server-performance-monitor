@@ -45,7 +45,9 @@ layout = html.Div(children=[
                      persistence='string',
                      style={'width': "90%"},
                      persistence_type='session'),
-
+        html.Br(),
+        html.Br(),
+        html.Br()
     ], className='three columns'),
 ])
 
@@ -68,15 +70,15 @@ def build_graph(metric1, metric2):
             secondary_y=False,
         )
         fig.add_trace(
-            go.Scatter(x=df2['report_time'], y=df2['cntr_value'], name=metric1, mode='lines'),
+            go.Scatter(x=df2['report_time'], y=df2['cntr_value'], name=metric2, mode='lines'),
             secondary_y=True,
         )
         # Set y-axes titles
         fig.update_yaxes(
-            title_text="<b>primary</b> yaxis title",
+            title_text="cntr_value",
             secondary_y=False)
         fig.update_yaxes(
-            title_text="<b>secondary</b> yaxis title",
+            title_text="<b>secondary</b> cntr_value",
             secondary_y=True)
 
     else:
